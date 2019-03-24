@@ -1,5 +1,4 @@
 const calculChange = (amount) => {
-  let noMonney = false;
   let change = { 10 : 0,
                  5  : 0,
                  2  : 0}
@@ -8,7 +7,7 @@ const calculChange = (amount) => {
   while(amount != 0){
     //if amount is less then three
     if(amount <= 3){
-        amount === 2 ? change[2] +=1 : change.noMonney = null ;
+        amount === 2 ? change[2] +=1 : change.noMoney = null ;
         break
     }
     //if superior of 10 and not modulo of 0 
@@ -49,8 +48,6 @@ const calculChange = (amount) => {
 
 module.exports = (req, res) => {
    let { amount } = req.params
-   console.log(calculChange(amount));
-   res.send('rez')
-    
+   res.send(calculChange(parseInt(amount)))
 };
 
